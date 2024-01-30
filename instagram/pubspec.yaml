@@ -1,0 +1,33 @@
+name: instagram
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+  - images/profile.jpg
+  - images/karan.png
+  - images/sushant.jpg
+  - images/rutik.png
+  - images/rohan.png
+  - images/swapnil.png
+  - images/post17.jpg
+  - images/post18.jpg
+  - images/post19.jpg
+  - images/post11.jpg
+  - images/post12.jpg
+  - images/post5.jpg
+  - images/post50.jpg
