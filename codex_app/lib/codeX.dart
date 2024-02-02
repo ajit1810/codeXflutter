@@ -16,386 +16,524 @@ class CodeX extends StatelessWidget {
           ),
         ],
       ),
-      body: SizedBox(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 30,
-                margin: EdgeInsets.only(left: 20, top: 30, bottom: 20),
-                child: Text(
-                  "Languages",
-                  style: TextStyle(fontSize: 20,color: Colors.white),
-                ),
-              ),
-              Container(
-                child: SingleChildScrollView(
+               Container(
+                        margin: EdgeInsets.only(left: 20,top: 20),
+                        child: Text("Languages",style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900
+                        ),
+                      ),
+                    ),
+                Container(
+                  child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [
+                  children: [
+                    Container(
+                      child: Column(
+                      children: [
                       SizedBox(
-                        width: 20,
+                        height: 20,
                       ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            border: Border.all(
-                                color: Color.fromARGB(255, 27, 105, 169),
-                                width: 3),
-                            image: DecorationImage(
-                                image: AssetImage("images/java-14-logo.png"),
-                                fit: BoxFit.cover),
-                            boxShadow: [BoxShadow(blurRadius: 2)]),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        // child: Image.asset("images/Python-logo.png"),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
-                            border: Border.all(
-                                color: Color.fromARGB(255, 27, 105, 169),
-                                width: 3),
-                            image: DecorationImage(
-                              image: AssetImage("images/Python-logo.png"),
-                              fit: BoxFit.cover,
+                            Container(
+                              margin: EdgeInsets.only(left: 30,top: 10),
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                 image: DecorationImage(image: AssetImage("images/java-14-logo.png"),
+                                 fit: BoxFit.cover)
+                              ),
                             ),
-                            boxShadow: [BoxShadow(blurRadius: 2)]),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        // child: Image.asset("images/Dart-logo.png"),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            border: Border.all(
-                                color: Color.fromARGB(255, 27, 105, 169),
-                                width: 3),
-                            image: DecorationImage(
-                                image: AssetImage("images/Dart-logo.png"),
-                                fit: BoxFit.cover),
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 2,
-                              )
-                            ]),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        // child: Image.asset("images/js-logo.png"),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          image: DecorationImage(
-                              image: AssetImage("images/js-logo.png"),
-                              fit: BoxFit.cover),
-                          border: Border.all(
-                            color: Color.fromARGB(255, 27, 105, 169),
-                            width: 3,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 2,
+                            Container(
+                              margin: EdgeInsets.only(top: 10,left:25),
+                              child: Text("Java",style: TextStyle(
+                                color: Colors.white
+                              ),),
                             )
                           ],
                         ),
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                height: 20,
-                margin: EdgeInsets.only(left: 20, top: 50, bottom: 20),
-                child: Text(
-                  "Framework",
-                  style: TextStyle(fontSize: 20,color: Colors.white),
-                ),
-              ),
-              Container(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
                       Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Color.fromARGB(255, 27, 105, 169),
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(30),
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmRzxZYMOvjJGPm6m783qNcHhVrLYrsa0vtw&usqp=CAU"),
-                              fit: BoxFit.cover,
-                            ),
-                            boxShadow: [BoxShadow(blurRadius: 2)]),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          image: DecorationImage(
-                            image: AssetImage("images/spring-logo.png"),
-                            fit: BoxFit.cover,
-                          ),
-                          boxShadow: [BoxShadow(blurRadius: 2)],
-                          border: Border.all(
-                            color: Color.fromARGB(255, 27, 105, 169),
-                            width: 3,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          image: DecorationImage(
-                            image: AssetImage("images/react-logo.png"),
-                            fit: BoxFit.cover,
-                          ),
-                          boxShadow: [BoxShadow(blurRadius: 2)],
-                          border: Border.all(
-                            color: Color.fromARGB(255, 27, 105, 169),
-                            width: 3,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          image: DecorationImage(
-                            image: AssetImage("images/maria.png"),
-                            fit: BoxFit.cover,
-                          ),
-                          boxShadow: [BoxShadow(blurRadius: 2)],
-                          border: Border.all(
-                            color: Color.fromARGB(255, 27, 105, 169),
-                            width: 3,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                height: 20,
-                margin: EdgeInsets.only(left: 20, top: 50, bottom: 20),
-                child: Text(
-                  "Database",
-                  style: TextStyle(fontSize: 20,color: Colors.white),
-                ),
-              ),
-              Container(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: NetworkImage(
-                                    "images/mysql-img.png"),
-                                fit: BoxFit.cover),
-                            borderRadius: BorderRadius.all(
-                             Radius.circular(30),
-                            ),
-                            border: Border.all(
-                            color: Color.fromARGB(255, 27, 105, 169),
-                            width: 3,
-                            ),
-                            boxShadow: [BoxShadow(blurRadius: 2)]),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            image: DecorationImage(
-                                image: AssetImage(
-                              "images/mongodb.png",
-                            )),
-                            border: Border.all(
-                             color: Color.fromARGB(255, 27, 105, 169),
-                                width: 3),
-                                  boxShadow: [BoxShadow(blurRadius: 2)]),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                           borderRadius: BorderRadius.circular(30),
-                            image: DecorationImage(
-                                image: AssetImage(
-                              "images/hibernate-logo.png",
-                            )),
-                         border: Border.all(
-                           color: Color.fromARGB(255, 27, 105, 169),
-                            width: 3),
-                            boxShadow: [BoxShadow(blurRadius: 2)]),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs4CKqdBgjxCkkCXu4ZhoRWBEvbaDJpSPJSaw6gCH9Cdh1oS9WYdkJQIllU2EqomfqQng&usqp=CAU",
+                        margin: EdgeInsets.only(left: 30,top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                 image: DecorationImage(image: AssetImage("images/Python-logo.png"),
+                                 fit: BoxFit.cover
+                                 )
                               ),
-                              fit: BoxFit.cover,
                             ),
-                            border: Border.all(
-                            color: Color.fromARGB(255, 27, 105, 169),
-                            width: 3),
-                            boxShadow: [BoxShadow(blurRadius: 2)]),
+                            Container(
+                              margin: EdgeInsets.only(top: 9),
+                              child: Text("Python",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                      SizedBox(
-                        width: 20,
-                      )
+                      Container(
+                        margin: EdgeInsets.only(left: 30,top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/Dart-logo.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: Text("Dart",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 30,top: 30,right: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/js-logo.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: Text("JS",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),   
+                    ],
+                  ),                
+                ),
+              ),
+               Container(
+                margin: EdgeInsets.only(left: 20,top: 30),
+                        child: Text("Frameworks",style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w900
+                        ),
+                        ),
+                      ),
+                      Container(
+                         child: SingleChildScrollView(
+                         scrollDirection: Axis.horizontal,
+                         child: Row(
+                         children: [
+                           Container(
+                            child: Column(
+                            children: [
+                              SizedBox(
+                               height: 20,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(left: 30,top: 10),
+                                height: 90,
+                                width: 90,
+                                decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                color: Colors.white,
+                                image: DecorationImage(image: AssetImage("images/flutter-logo.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left:30,top: 10 ),
+                              child: Text("Flutter",style: TextStyle(
+                              color: Colors.white
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                      Container(
+                        margin: EdgeInsets.only(left: 30,top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/spring-logo.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 9),
+                              child: Text("Spring",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 30,top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/react-logo.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: Text("React",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 30,top: 30,right: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/hibernate-logo.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: Text("Hibernate",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),                    
                     ],
                   ),
                 ),
               ),
               Container(
-                height: 20,
-                margin: EdgeInsets.only(left: 20, top: 50, bottom: 20),
-                child: Text(
-                  "Tools",
-                  style: TextStyle(fontSize: 20,color: Colors.white),
-                ),
-              ),
-              Container(
+                        margin: EdgeInsets.only(left: 20,top: 30),
+                        child: Text("Database",style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w900
+                        ),),
+                      ),
+               Container(
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
+                      Container(
+                        child: Column(
+                          children: [
                       SizedBox(
-                        width: 20,
+                        height: 20,
+                      ),
+                            Container(
+                              margin: EdgeInsets.only(left: 30,top: 10),
+                              height: 90,
+                              width: 90,
+                               decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/mysql-img.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 20 , top: 10),
+                              child: Text("MySQL",style: TextStyle(
+                                color: Colors.white
+                              ),),
+                            )
+                          ],
+                        ),
                       ),
                       Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                            image: AssetImage("images/git-img.png")),
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
-                            border: Border.all(
-                            color: Color.fromARGB(255, 27, 105, 169),
-                            width: 3),
-                            boxShadow: [BoxShadow(blurRadius: 2)]),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                            image: AssetImage("images/github.png")),
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
-                            border: Border.all(
-                            color: Color.fromARGB(255, 27, 105, 169),
-                            width: 3),
-                            boxShadow: [BoxShadow(blurRadius: 2)]),
-                      ),
-                      SizedBox(
-                        width: 30,
+                        margin: EdgeInsets.only(left: 30,top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                               decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/mongodb.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: Text("MongoDB",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                       Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                            image: AssetImage("images/eclipse.png")),
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
-                            border: Border.all(
-                            color: Color.fromARGB(255, 27, 105, 169),
-                            width: 3),
-                            boxShadow: [BoxShadow(blurRadius: 2)]),
-                      ),
-                      SizedBox(
-                        width: 30,
+                        margin: EdgeInsets.only(left: 30,top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                               decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/oracle.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: Text("Oracle",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                       Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                        image: DecorationImage(
-                        image: AssetImage("images/vs-logo.png")),
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        border: Border.all(
-                        color: Color.fromARGB(255, 27, 105, 169),
-                        width: 3),
-                        boxShadow: [BoxShadow(blurRadius: 2)]),
+                        margin: EdgeInsets.only(left: 30,top: 30,right: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                               decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/maria.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: Text("MariaDB",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),                      
+                    ],
+                  ),           
+                ),
+              ),
+               Container(
+                        margin: EdgeInsets.only(left: 20,top: 30),
+                        child: Text("Tools",style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w900
+                        ),),
                       ),
-                      SizedBox(
-                        width: 20,
-                      )
+               Container(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Column(
+                          children: [
+                          SizedBox(
+                            height: 20,
+                      ),
+                            Container(
+                              margin: EdgeInsets.only(left: 30,top: 10),
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/git-img.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 20,top: 10),
+                              child: Text("Git",style: TextStyle(
+                                color: Colors.white
+                              ),),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 30,top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/github.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: Text("GitHub",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 30,top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/eclipse.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: Text("Eclipse",style: TextStyle(
+                                color: Colors.white
+                              ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 30,top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/vs-logo.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 10,top: 10),
+                              child: Text("vs code",style: TextStyle(
+                                color: Colors.white,
+                              ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                       Container(
+                        margin: EdgeInsets.only(left: 30,top: 30,right: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                 color: Colors.white,
+                                  image: DecorationImage(image: AssetImage("images/postman.png"),
+                                 fit: BoxFit.cover
+                                 )          
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 10,top: 10),
+                              child: Text("Postman",style: TextStyle(
+                                color: Colors.white,
+                              ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
               Container(
                 height: 30,
-              )
+              )      
             ],
           ),
         ),
       ),
-    );
+      );
   }
 }
