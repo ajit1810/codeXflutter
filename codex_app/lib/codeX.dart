@@ -140,7 +140,7 @@ class CodeX extends StatelessWidget {
                         ),
                       ),   
                     ],
-                  ),                
+                  ),   
                 ),
               ),
                Container(

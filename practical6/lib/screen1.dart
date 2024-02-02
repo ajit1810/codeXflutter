@@ -1,13 +1,15 @@
+
+
 import 'package:flutter/material.dart';
 
-class BoxcolorChange extends StatefulWidget {
-  const BoxcolorChange({super.key});
+class Screen1 extends StatefulWidget {
+  const Screen1({super.key});
 
   @override
-  State<BoxcolorChange> createState() => _BoxcolorChangeState();
+  State<Screen1> createState() => _Screen1State();
 }
 
-class _BoxcolorChangeState extends State<BoxcolorChange> {
+class _Screen1State extends State<Screen1> {
   bool boxcolor = false;
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class _BoxcolorChangeState extends State<BoxcolorChange> {
                 setState(() {
                   boxcolor = !boxcolor;
                 });
-              }, child: Text("click",))
+              }, child: Text("click"))
             ],
           ),
         ),
