@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers, sized_box_for_whitespace, non_constant_identifier_names, prefer_const_literals_to_create_immutables, unnecessary_string_interpolations
+
 import 'package:flutter/material.dart';
 
 class PortFolio extends StatefulWidget {
@@ -18,7 +20,7 @@ class _PortFolioState extends State<PortFolio> {
 
  Widget myName(){
   if(count>=1){
-      return Text(
+      return const Text(
         "Ajit Mane",
       style: TextStyle(fontSize: 20,
       fontWeight: FontWeight.w900
@@ -73,8 +75,8 @@ class _PortFolioState extends State<PortFolio> {
  Widget myInfo(){
   if(count>=3){
     return Container(
-      margin: EdgeInsets.only(left: 40,top: 10),
-      child:Text(
+      margin: const EdgeInsets.only(left: 40,top: 10),
+      child:const Text(
         "Hello,MySelf Ajit Mane , I am from Rahimatpur.",
     style: TextStyle(
       fontSize: 20
@@ -236,9 +238,9 @@ Widget ImageCard(String image) {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("PortFolio"),
+        title: const Text("PortFolio"),
       ),
-      floatingActionButton: IconButton(onPressed: reload, icon: Icon(Icons.add)),
+      floatingActionButton: IconButton(onPressed: reload, icon: const Icon(Icons.add)),
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [
@@ -246,9 +248,9 @@ Widget ImageCard(String image) {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-                Padding(padding: EdgeInsets.only(top: 30)),
+                const Padding(padding: EdgeInsets.only(top: 30)),
                 myName(),
-                Padding(padding: EdgeInsets.only(top: 30)),
+                const Padding(padding: EdgeInsets.only(top: 30)),
                 myPic(),
                 myInfo(),
                 Container(
