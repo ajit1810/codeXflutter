@@ -1,8 +1,9 @@
 
-import 'package:codex_app/JavaScript/js.dart';
-import 'package:codex_app/dart/Dart.dart';
-import 'package:codex_app/java/javaSyllabus.dart';
-import 'package:codex_app/python/python.dart';
+// import 'package:codex_app/JavaScript/js.dart';
+// import 'package:codex_app/java/javaSyllabus.dart';
+// import 'package:codex_app/python/python.dart';
+import 'package:codex_app/Dart/DartUI.dart';
+import 'package:codex_app/java/javaUI.dart';
 import 'package:flutter/material.dart';
 
 
@@ -12,6 +13,7 @@ class CodeX extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: const Color.fromARGB(0, 0, 0, 0),
       appBar: AppBar(
         title: const Text("CodeX"),
         actions: [
@@ -51,7 +53,7 @@ class CodeX extends StatelessWidget {
                             Container(
                               child: InkWell(
                                 onTap: () {
-                                  Navigator.push(context,MaterialPageRoute(builder: (context) => JavaSyllabus(),) 
+                                  Navigator.push(context,MaterialPageRoute(builder: (context) => JavaUI(),) 
                                   );
                                 },
                               ),
@@ -86,42 +88,7 @@ class CodeX extends StatelessWidget {
                             Container(
                               child: InkWell(
                                 onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => Python_Syllabus(),));
-                                },
-                              ),
-                              height: 120,
-                              width: 120,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                 boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 2,
-                                    // spreadRadius: 1,
-                                    offset: Offset(9, 9)
-                                  )
-                                 ],
-                                 image: const DecorationImage(image: AssetImage("images/Python-logo.png"),
-                                 fit: BoxFit.cover
-                                 )
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 20),
-                              child: const Text("Python",style: TextStyle(
-                              ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(left: 30,top: 30),
-                        child: Column(
-                          children: [
-                            Container(
-                              child: InkWell(
-                                onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => DartSyllabus(),)
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => DartUI(),)
                                   );
                                 },
                               ),
@@ -150,15 +117,51 @@ class CodeX extends StatelessWidget {
                         ),
                       ),
                       Container(
+                        margin: const EdgeInsets.only(left: 30,top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              // child: InkWell(
+                              //   onTap: () {
+                              //     Navigator.push(context, MaterialPageRoute(builder: (context) => Python_Syllabus(),));
+                              //   },
+                              // ),
+                              height: 120,
+                              width: 120,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                 boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 2,
+                                    // spreadRadius: 1,
+                                    offset: Offset(9, 9)
+                                  )
+                                 ],
+                                 image: const DecorationImage(image: AssetImage("images/Python-logo.png"),
+                                 fit: BoxFit.cover
+                                 )
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(top: 20),
+                              child: const Text("Python",style: TextStyle(
+                              ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      
+                      Container(
                         margin: const EdgeInsets.only(left: 30,top: 30,right: 30),
                         child: Column(
                           children: [
                             Container(
-                             child: InkWell(
-                              onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => JavaScript(),));
-                              },
-                             ),
+                            //  child: InkWell(
+                            //   onTap: () {
+                            //     Navigator.push(context, MaterialPageRoute(builder: (context) => JavaScript(),));
+                            //   },
+                            //  ),
                               height: 120,
                               width: 120,
                               decoration: BoxDecoration(

@@ -1,38 +1,113 @@
-
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
-import 'package:flutter_highlight/flutter_highlight.dart';
+import 'package:flutter_highlighting/flutter_highlighting.dart';
 import 'package:flutter_highlighting/themes/github-dark-dimmed.dart';
 
-
-class IntroToJava extends StatelessWidget {
-  String javacode = '''
+class IntroTojava extends StatelessWidget {
+   IntroTojava({super.key});
   
-
-    class Demo{
+  List IntroductionCodes = [
+    '''
+    class Demo {
       public static void main(String[]args){
-        System.out.println("Hello World");
+        System.out.println("Hello Word");
       }
     }
+    ''',
+    '''
 
-  ''' ;
-   IntroToJava({super.key});
-
+      class Demo {
+      public static void main(String[]args){
+        System.out.println("Hello Word");
+      }
+    }
+    ''',
+    '''
+    class Demo {
+      public static void main(String[]args){
+        System.out.println("Hello Word");
+      }
+    }
+    ''',
+  
+    '''
+    class Demo {
+      public static void main(String[]args){
+        System.out.println("Hello Word");
+      }
+    }
+    ''',
+    '''
+    class Demo {
+      public static void main(String[]args){
+        System.out.println("Hello Word");
+      }
+    }
+    ''',
+    '''
+    class Demo {
+      public static void main(String[]args){
+        System.out.println("Hello Word");
+      }
+    }
+    ''',
+    '''
+    class Demo {
+      public static void main(String[]args){
+        System.out.println("Hello Word");
+      }
+    }
+    ''',
+    '''
+    class Demo {
+      public static void main(String[]args){
+        System.out.println("Hello Word");
+      }
+    }
+    ''',
+    '''
+    class Demo {
+      public static void main(String[]args){
+        System.out.println("Hello Word");
+      }
+    }
+    ''',
+    '''
+    class Demo {
+      public static void main(String[]args){
+        System.out.println("Hello Word");
+      }
+    }
+    '''
+  ];
+    
   @override
   Widget build(BuildContext context) {
-    return Scaffold (
+    return Scaffold(
       appBar: AppBar(
-        title: Text("Programs"),
-      
+        title: Text("Introduction to java"),
       ),
-      body: Center(
-        child: HighlightView(
-          javacode,
-          language: javacode,
-          theme: githubDarkDimmedTheme,
+      body: Container(
+        margin: EdgeInsets.all(10),
+       child: ListView.builder(
+        itemCount: IntroductionCodes.length,
+        itemBuilder: (context, index) {
+         return Container(
+           child: Column(
+             children: [
+              Container(
+                margin: EdgeInsets.all(10),
+                 child: HighlightView(
+                   "${IntroductionCodes[index]}",
+                   languageId: "java",
+                   theme: githubDarkDimmedTheme,
+                 ),
+               )
+             ],
+           ),
+         );
+       },
+       ),
         ),
-      ),
     );
   }
 }

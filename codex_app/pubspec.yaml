@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # flutter_native_splash: ^2.2.16
   flutter_highlight: ^0.7.0
   flutter_highlighting: ^0.9.0+11.8.0
 
@@ -37,3 +38,6 @@ flutter:
    - images/oracle.png
    - images/postman.png
    - images/flutter-logo.png
+   - images/logoX.jpeg
+   - images/google.png
+   - images/apple.png
