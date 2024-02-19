@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_highlighting/flutter_highlighting.dart';
 import 'package:flutter_highlighting/themes/github-dark-dimmed.dart';
 
+// ignore: must_be_immutable
 class IntroTojava extends StatelessWidget {
    IntroTojava({super.key});
   
