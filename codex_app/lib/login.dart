@@ -95,9 +95,7 @@ class Login extends StatelessWidget {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => CodeX(),));
                   }, 
                   child: Text(
-                    
-                    "Login",
-                    
+                    "Login",   
                       style: TextStyle(fontSize: 20,),
                       
                       )

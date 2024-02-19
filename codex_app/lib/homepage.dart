@@ -225,12 +225,18 @@ class CodeX extends StatelessWidget {
                                  fit: BoxFit.cover
                                  )
                               ),
+                              // child: InkWell(
+                              //   onTap: () {
+                              //     Navigator.push(context, MaterialPageRoute(builder: (context) => FlutterUI(),));
+                              //   },
+                              // ),
                             ),
                             Container(
                               margin: const EdgeInsets.only(left:30,top: 20 ),
                               child: const Text("Flutter"
                             ),
                           )
+
                         ],
                       ),
                     ),
