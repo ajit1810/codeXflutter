@@ -1,5 +1,7 @@
 import 'package:codex_app/Dart/Topics/Datatypes.dart';
 import 'package:codex_app/Dart/Topics/IntroToDart.dart';
+import 'package:codex_app/Dart/Topics/Operators.dart';
+import 'package:codex_app/Dart/Topics/nullsafety.dart';
 import 'package:flutter/material.dart';
 
 class DartUI extends StatelessWidget {
@@ -19,8 +21,8 @@ class DartUI extends StatelessWidget {
             child: Column(
               children: [
                   Container(
-                  margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.only(left: 85,top: 5),
+                  margin: EdgeInsets.only(top: 20,left: 40,right: 40),
+              padding: EdgeInsets.only(left: 50,top: 7),
                   height: 40,
                   width: 350,
                   decoration: BoxDecoration(
@@ -38,8 +40,27 @@ class DartUI extends StatelessWidget {
                   ),
                 ),
                  Container(
-                  margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.only(left: 120,top: 5),
+                  margin: EdgeInsets.only(top: 20,left: 40,right: 40),
+                  padding: EdgeInsets.only(left: 90,top: 7),
+                  height: 40,
+                  width: 350,
+                  decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.grey,
+                  ),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DartOperators(),));
+                    },child: Text("Operators",
+                    style: TextStyle(
+                      fontSize: 20
+                    )
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20,left: 40,right: 40),
+                  padding: EdgeInsets.only(left: 90,top: 7),
                   height: 40,
                   width: 350,
                   decoration: BoxDecoration(
@@ -55,7 +76,46 @@ class DartUI extends StatelessWidget {
                     )
                     ),
                   ),
-                )              
+                ),
+
+                 Container(
+                  margin: EdgeInsets.only(top: 20,left: 40,right: 40),
+                  padding: EdgeInsets.only(left: 90,top: 7),
+                  height: 40,
+                  width: 350,
+                  decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.grey,
+                  ),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => NullSafety(),));
+                    },child: Text("Null Safety",
+                    style: TextStyle(
+                      fontSize: 20
+                    )
+                    ),
+                  ),
+                ) ,
+                //  Container(
+                //   margin: EdgeInsets.only(top: 20,left: 40,right: 40),
+                //   padding: EdgeInsets.only(left: 90,top: 7),
+                //   height: 40,
+                //   width: 350,
+                //   decoration: BoxDecoration(
+                //   borderRadius: BorderRadius.circular(15),
+                //   color: Colors.grey,
+                //   ),
+                //   child: InkWell(
+                //     onTap: () {
+                //       Navigator.push(context, MaterialPageRoute(builder: (context) => DartDataTypes(),));
+                //     },child: Text("Constructor",
+                //     style: TextStyle(
+                //       fontSize: 20
+                //     )
+                //     ),
+                //   ),
+                // ),     
               ],
             ),
           )

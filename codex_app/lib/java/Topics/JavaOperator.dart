@@ -49,6 +49,16 @@ class JavaOperators extends StatelessWidget {
       }
       
     ''' ,
+     '''
+       class Demo {
+        public static void main(String[]args){
+          int a=10;
+          int b=20;
+          int c=a/b;
+          System.out.println(c);
+        }
+      }
+      '''
   ];
 
   @override
@@ -65,6 +75,14 @@ class JavaOperators extends StatelessWidget {
          return Container(
            child: Column(
              children: [
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 30,top: 20),
+                    child: Text("Program ${index + 1}"),
+                  )
+                ],
+              ),
               Container(
                 margin: EdgeInsets.all(10),
                  child: HighlightView(

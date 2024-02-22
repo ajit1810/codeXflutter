@@ -88,15 +88,23 @@ class IntroTojava extends StatelessWidget {
         title: Text("Introduction to java"),
       ),
       body: Container(
-        margin: EdgeInsets.all(10),
+        margin: EdgeInsets.only(top:10),
        child: ListView.builder(
         itemCount: IntroductionCodes.length,
         itemBuilder: (context, index) {
          return Container(
            child: Column(
              children: [
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 30,top: 10),
+                    child: Text("Program ${index +1}")
+                    )
+                ],
+              ),
               Container(
-                margin: EdgeInsets.all(10),
+                margin: EdgeInsets.all(20),
                  child: HighlightView(
                    "${IntroductionCodes[index]}",
                    languageId: "java",
