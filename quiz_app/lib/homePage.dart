@@ -18,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (selectedAnsIndex != -1) {
       if (buttonIndex == selectedAnsIndex) {
         if (selectedAnsIndex == Questions[questionIndex]["correctAnswer"]) {
-          totalScore++;
+          totalScore = questionIndex+1;
           return MaterialStatePropertyAll(Colors.green);
         } else {
           return MaterialStatePropertyAll(Colors.red);
