@@ -181,7 +181,7 @@ class CodeX extends StatelessWidget {
                         CarouselOptions(
                           autoPlay: true,
                           aspectRatio: 1.9,
-                         viewportFraction: 0.9
+                         viewportFraction: 0.5
                         )
                       ),
               ),
@@ -304,7 +304,7 @@ class CodeX extends StatelessWidget {
                  options: CarouselOptions(
                   autoPlay: true, 
                   aspectRatio: 1.9,
-                  viewportFraction: 0.9,
+                  viewportFraction: 0.5,
                              
                     )
                   ),
@@ -421,7 +421,7 @@ class CodeX extends StatelessWidget {
                 ], options: CarouselOptions(
                   autoPlay: true,
                   aspectRatio: 1.9,
-                  viewportFraction: 0.9
+                  viewportFraction: 0.5
                 )
                 ),
               ),
@@ -560,7 +560,13 @@ class CodeX extends StatelessWidget {
                 options: CarouselOptions(
                   autoPlay: true,
                   aspectRatio: 1.9,
-                  viewportFraction: 0.9
+                  viewportFraction: 0.5,
+                  autoPlayAnimationDuration: Duration(seconds: 2),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  autoPlayInterval: Duration(seconds: 3),
+                  initialPage: 0,
+                  pageSnapping: true,
+                  
                 )),
               ),
               Container(
