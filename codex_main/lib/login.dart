@@ -97,6 +97,7 @@ class _LoginpageState extends State<Loginpage> {
                   Container(
                     margin: EdgeInsets.only(left: 30,top: 10,right: 30,),
                     child: TextField(
+                      obscureText: true,
                       controller: passwordController,
                        onChanged: (value) {
                         password = value; 
@@ -114,6 +115,7 @@ class _LoginpageState extends State<Loginpage> {
                         ),
                         fillColor: Colors.grey.shade200,
                         filled: true,
+
                         hintText: "Password ",
                         hintStyle: TextStyle(
                           color: Colors.black
