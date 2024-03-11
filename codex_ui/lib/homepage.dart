@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     margin: const EdgeInsets.only(left: 20),
                     height: 80,
-                    width: 100,
+                    width: 80,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.horizontal(left: Radius.circular(40),right: Radius.circular(40)),
                       image: DecorationImage(
@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
               CoursesWidget(),
               courses('Upcoming Courses'),
               Container(
-                margin: const EdgeInsets.only(top: 10,left: 10,right: 10),
+                margin: const EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 10),
                 height: 160,
                 width: 350,
                 decoration: BoxDecoration(
@@ -190,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                          ),
                        ),
                         Container(
-                          margin: EdgeInsets.only(left: 120,top: 10),
+                          margin: EdgeInsets.only(left: 90,top: 10),
                           child: ElevatedButton(
                             style: ButtonStyle(
                               fixedSize: MaterialStateProperty.all(Size(80, 12)),
@@ -202,12 +202,15 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 60,vertical: 25),
-                      child: Text('Flutter App Developmet',
-                      style: GoogleFonts.anekTamil(
-                        fontSize: 20,
-                        color: Colors.white)),
+                    Expanded(
+                      child: Container(
+                       
+                        margin: EdgeInsets.symmetric(horizontal: 60,vertical: 25),
+                        child: Text('Flutter App Developmet',
+                        style: GoogleFonts.anekTamil(
+                          fontSize: 20,
+                          color: Colors.white)),
+                      ),
                     )
                   ],
                 ),

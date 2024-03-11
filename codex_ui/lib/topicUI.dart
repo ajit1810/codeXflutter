@@ -25,40 +25,44 @@ class _TopicUIState extends State<TopicUI> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
-                margin: EdgeInsets.only(left: 50, right: 10, top: 50),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePage(),
-                              ));
-                        },
-                        icon: Icon(
-                          Icons.arrow_back_ios_new_sharp,
-                          color: Colors.white,
-                        )),
-                    Text(
-                      'Java',
-                      style: GoogleFonts.jost(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                    Text(
-                      'Full Stack',
-                      style: GoogleFonts.quicksand(
-                          fontSize: 25, color: Colors.white),
-                    ),
-                  ],
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.only(left: 50, right: 10, top: 50),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomePage(),
+                                ));
+                          },
+                          icon: Icon(
+                            Icons.arrow_back_ios_new_sharp,
+                            color: Colors.white,
+                          )),
+                      Text(
+                        'Java',
+                        style: GoogleFonts.jost(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      Container(
+                        child: Text(
+                          'Full Stack',
+                          style: GoogleFonts.quicksand(
+                              fontSize: 25, color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 70, left: 30),
+                margin: EdgeInsets.only(top: 70, left: 30,right: 30),
                 height: 120,
                 width: 120,
                 decoration: BoxDecoration(
@@ -78,7 +82,7 @@ class _TopicUIState extends State<TopicUI> {
           Expanded(
             child: Container(
                 margin: EdgeInsets.only(top: 50),
-                padding: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(top: 20),
                 height: 544,
                 decoration: BoxDecoration(
                     color: Colors.white,
