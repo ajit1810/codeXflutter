@@ -1,0 +1,33 @@
+name: bikes_ui
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^5.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets : 
+  - images/white_bicycle.png
+  - images/top_bicycle.png
+  - images/helmet.png
+  - images/black_bicycle.png
+  - images/image.png
+  - images/Subtract.png
+  - images/Union.png
+  - images/Union (1).png
+  - images/Union (2).png
+  - images/add.png
+  - images/minus.png
+  - images/forward.png
