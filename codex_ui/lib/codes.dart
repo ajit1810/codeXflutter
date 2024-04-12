@@ -21,68 +21,68 @@ class _CodesState extends State<Codes> {
   Widget build(BuildContext context) {
     return Scaffold(
        backgroundColor: Color(0xFF9B89CE),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.only(left: 50, right: 10, top: 50),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      IconButton(
-                          onPressed: () {
-                            Navigator.pop(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => TopicUI(),
-                                ));
-                          },
-                          icon: Icon(
-                            Icons.arrow_back_ios_new_sharp,
-                            color: Colors.white,
-                          )),
-                      Text(
-                        'Java',
-                        style: GoogleFonts.jost(
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                      Text(
-                        'Full Stack',
-                        style: GoogleFonts.quicksand(
-                            fontSize: 25, color: Colors.white),
-                      ),
-                    ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(left: 50, right: 10, top: 50),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        IconButton(
+                            onPressed: () {
+                              Navigator.pop(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => TopicUI(),
+                                  ));
+                            },
+                            icon: Icon(
+                              Icons.arrow_back_ios_new_sharp,
+                              color: Colors.white,
+                            )),
+                        Text(
+                          'Java',
+                          style: GoogleFonts.jost(
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          'Full Stack',
+                          style: GoogleFonts.quicksand(
+                              fontSize: 25, color: Colors.white),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 70, left: 30,right: 30),
-                height: 120,
-                width: 120,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Color.fromRGBO(62, 35, 232, 1),
-                          Color.fromRGBO(0, 0, 0, 1)
-                        ]),
-                    image:
-                        DecorationImage(image: AssetImage('images/java.png'))),
-              )
-            ],
-          ),
-          Expanded(
-            child: Container(
+                Container(
+                  margin: EdgeInsets.only(top: 70, left: 30,right: 30),
+                  height: 120,
+                  width: 120,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color.fromRGBO(62, 35, 232, 1),
+                            Color.fromRGBO(0, 0, 0, 1)
+                          ]),
+                      image:
+                          DecorationImage(image: AssetImage('images/java.png'))),
+                )
+              ],
+            ),
+            Container(
               margin: EdgeInsets.only(top: 50),
               padding: const EdgeInsets.only(top: 10),
-              // height: 544,
+              height: 800,
              
               decoration: const BoxDecoration(
                   color: Colors.white,
@@ -93,13 +93,13 @@ class _CodesState extends State<Codes> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: 20),
+                    margin: const EdgeInsets.only(top: 10),
                     child: Text(CodeList!['title'],
                         style: GoogleFonts.anekTamil(
                             fontSize: 20, fontWeight: FontWeight.bold)),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 5),
                     height: 2,
                     width: double.infinity,
                     color: Colors.black,
@@ -108,13 +108,13 @@ class _CodesState extends State<Codes> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(top: 0, left: 30),
+                        margin: const EdgeInsets.only(top: 11, left: 30,),
                         child: Icon(Icons.circle, size: 10),
                       ),
                       Container(
-                          height: 35,
+                          height: 20,
                           width: 210,
-                          margin: const EdgeInsets.only(top: 20, left: 10),
+                          margin: const EdgeInsets.only(top: 10, left: 10),
                           child: Text(
                             "What is Java",
                             style: GoogleFonts.anekTamil(
@@ -124,7 +124,7 @@ class _CodesState extends State<Codes> {
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 35, top: 0),
-                    height: 60,
+                    height: 45,
                     width: 300,
                     child: Text(
                       'lorem ipsum lorem ipsum lorem ipsum lorem ipsum  ',
@@ -135,13 +135,13 @@ class _CodesState extends State<Codes> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(top: 5, left: 30),
+                        margin: const EdgeInsets.only(top: 11, left: 30),
                         child: Icon(Icons.circle, size: 10),
                       ),
                       Container(
-                          height: 35,
+                          height: 20,
                           width: 250,
-                          margin: const EdgeInsets.only(top: 20, left: 10),
+                          margin: const EdgeInsets.only(top: 10, left: 10),
                           child: Text(
                             'Java is Platform Independent',
                             style: GoogleFonts.anekTamil(
@@ -151,7 +151,7 @@ class _CodesState extends State<Codes> {
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 35, top: 0),
-                    height: 60,
+                    height: 45,
                     width: 300,
                     child: Text(
                       'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
@@ -196,8 +196,8 @@ class _CodesState extends State<Codes> {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

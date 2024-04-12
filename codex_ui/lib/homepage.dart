@@ -96,6 +96,27 @@ class _HomePageState extends State<HomePage> {
             child: ImageCard(const Color.fromRGBO(124, 132, 233, 0.8), const Color.fromRGBO(219, 19, 19, 0.8), 
             'MERN Stack', 'images/mernstack.png'),
           ),
+
+          InkWell(
+            // onTap: () {
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (context) =>  TopicUI(CodeList:javacodes),));
+            // },
+            child: ImageCard(const Color.fromRGBO(124, 132, 233, 0.8), const Color.fromRGBO(219, 19, 19, 0.8), 
+            'Java full Stack', 'images/javafullstack.png'),
+          ),
+         
+           InkWell(
+            // onTap: () {
+            //   Navigator.push(
+            //     context, 
+            //     MaterialPageRoute(builder: (context) =>  TopicUI(),));
+            // },
+            child: ImageCard(const Color.fromRGBO(124, 132, 233, 0.8), const Color.fromRGBO(219, 19, 19, 0.8), 
+            'MERN Stack', 'images/mernstack.png'),
+          ),
+          
           
         ],
       ),

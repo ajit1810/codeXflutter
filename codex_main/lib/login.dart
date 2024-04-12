@@ -139,15 +139,32 @@ class _LoginpageState extends State<Loginpage> {
                    
                     child: ElevatedButton(
                       onPressed: (){
-                      username == "1" &&
-                      password == "1" 
-                      ? Navigator.pushReplacement(
+                      if (username == "1" &&
+                      password == "1" ) {
+                       ScaffoldMessenger.of(context).showSnackBar(
+                      
+                        SnackBar(content: Text('Login Sucessfully',
+                       style: TextStyle(
+                          fontSize: 18,
+                          
+                        ),)));
+                         Navigator.pushReplacement(
                         context,
                          MaterialPageRoute(
                           builder: (context) => Homepage(username: username),
                       )
-                      )
-                      : check(); 
+                      );
+                      } else {
+                        check();
+                      }
+
+                      // ? Navigator.pushReplacement(
+                      //   context,
+                      //    MaterialPageRoute(
+                      //     builder: (context) => Homepage(username: username),
+                      // )
+                      // )
+                      // : check(); 
                     }, 
                     child: Text(
                       "Login",   
