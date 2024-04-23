@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1021525354403",
+    "project_id": "codex-e2b9d",
+    "storage_bucket": "codex-e2b9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021525354403:android:dc4777a1604df4df881c16",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_Bt_bx8tse0qEb4Vncman0lssGgCmda8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

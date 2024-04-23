@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1007233150184",
+    "project_id": "fir-todo-1250f",
+    "storage_bucket": "fir-todo-1250f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007233150184:android:61dee7e9afeb3a76b56d5d",
+        "android_client_info": {
+          "package_name": "com.example.firebase_todolist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdPNW0QGmwpPcI46IDOZZK8b5QcZ8gV1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007233150184:android:eb845d0be6f986fdb56d5d",
+        "android_client_info": {
+          "package_name": "com.example.todolist_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdPNW0QGmwpPcI46IDOZZK8b5QcZ8gV1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
