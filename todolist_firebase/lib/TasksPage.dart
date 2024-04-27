@@ -4,6 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:todolist_firebase/Tasks.dart';
 import 'package:intl/intl.dart';
 
+
+
+
+
 class TasksPage extends StatelessWidget {
   final String categoryName;
   final String categoryId;
@@ -15,7 +19,29 @@ class TasksPage extends StatelessWidget {
     required this.collectionName
   });
 
-  final TextEditingController _textFieldController = TextEditingController();
+
+   final TextEditingController _textFieldController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
+
+
+      DateTime? selectedDate;
+    Future<void> _selectDate(BuildContext context) async {
+      final DateTime? picked = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2000),
+        lastDate: DateTime(2101),
+      );
+      if (picked != null && picked != selectedDate)
+       // setState(() {
+          selectedDate = picked;
+          _dateController.text = DateFormat('yyyy-MM-dd').format(picked!);
+          // Set selected date to text field
+        //});
+    }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -68,9 +94,27 @@ class TasksPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(task.title,
-                              style:  GoogleFonts.jost(
-                                  fontSize: 16, fontWeight: FontWeight.w600)),
+                          Column(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 70),
+                                child: Text(task.title,
+                                    style:  GoogleFonts.jost(
+                                        fontSize: 20, fontWeight: FontWeight.w600)
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(right: 70),
+                                child: Text(
+                                    DateFormat('dd-MM-yyyy').format(task.date),
+                                    style: GoogleFonts.jost(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight
+                                            .w400), // Format DateTime as desired
+                                  ),
+                              )
+                            ],
+                          ),
                           Row(
                             children: [
                               IconButton(
@@ -200,22 +244,53 @@ class TasksPage extends StatelessWidget {
                           borderSide: BorderSide.none)),
                 ),
               ),
+               Container(
+                     margin: const EdgeInsets.symmetric(horizontal: 55, vertical: 5),
+                      child: Text(
+                        "Enter Date",
+                        style: GoogleFonts.averageSans(
+                            fontWeight: FontWeight.w400, fontSize: 17),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 50),
+                      // padding: EdgeInsets.all(50),
+                      child: TextField(
+                        controller: _dateController,
+                        decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Color.fromRGBO(208, 205, 236, 1),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.zero,
+                              borderSide: BorderSide.none,
+                            ),
+                            suffixIcon: IconButton(
+                                onPressed: () {
+                                  _selectDate(context);
+                                },
+                                icon: Icon(Icons.calendar_today_outlined))),
+                      ),
+                    ),
               Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 30),
                   child: ElevatedButton(
                     onPressed: () async {
                       String taskTitle = _controller.text.trim();
-                      if (taskTitle.isNotEmpty) {
+                       String taskDate = _dateController.text.trim();
+                      if (taskTitle.isNotEmpty &&  taskDate.isNotEmpty) {
                         await tasksRef.add({
                           'categoryId': categoryId,
                           'title': taskTitle,
+                          'date': Timestamp.fromDate(
+                                  DateTime.parse(taskDate)),
                           'isCompleted': false,
                           'timestamp': FieldValue
                               .serverTimestamp(), // Add the timestamp field
                         });
 
-                        // ignore: use_build_context_synchronously
+                          _controller.clear();
+                          _dateController.clear();
                         Navigator.pop(context);
                       }
                     },

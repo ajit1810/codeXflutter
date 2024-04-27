@@ -5,12 +5,14 @@ class Task {
   final String categoryId;
   final String title;
   final bool isCompleted;
+  final DateTime date;
 
   Task({
     required this.id,
     required this.categoryId,
     required this.title,
     this.isCompleted = false,
+    required this.date,
   });
 
   // factory counstructor takes firestore document and return Task class object
@@ -21,6 +23,8 @@ class Task {
       categoryId: snapshot['categoryId'],
       title: snapshot['title'],
       isCompleted: snapshot['isCompleted'] ?? false,
+      date: (snapshot['date'] as Timestamp)
+          .toDate(),
     );
   }
 
@@ -29,6 +33,7 @@ class Task {
       'categoryId': categoryId,
       'title': title,
       'isCompleted': isCompleted,
+       'date': date,
     };
   }
 }
