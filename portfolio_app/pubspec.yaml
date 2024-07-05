@@ -1,0 +1,49 @@
+name: portfolio_app
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.6.6
+  sliding_sheet: ^0.5.2
+  font_awesome_flutter: ^10.1.0
+  carousel_slider: ^4.0.0
+  flutter_zoom_drawer: ^3.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+   - images/icons8-flutter-50.png
+   - images/icons8-react-js-50.png
+   - images/spring-gray.png
+   - images/icons8-java-50.png
+   - images/icons8-dart-50 (1).png
+   - images/icons8-database-50.png
+   - images/icons8-html-50 (1).png
+   - images/icons8-css-50 (1).png
+   - images/icons8-javascript-50.png
+   - images/myImage.png
+   - images/about.png
+   - images/quiz-1.jpg 
+   - images/quiz-2.jpg 
+   - images/quiz-3.jpg 
+   - images/quiz-4.jpg
+   - images/todo-1.jpg 
+   - images/todo-2.jpg 
+   - images/todo-3.jpg
+   - images/todo-4.jpg 
+   - images/codex-1.jpg 
+   - images/codex-2.jpg 
+   - images/codex-3.jpg 
+   - images/codex-4.jpg 
+   - images/codex-5.jpg  
