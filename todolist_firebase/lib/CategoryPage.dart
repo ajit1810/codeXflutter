@@ -5,9 +5,8 @@ import 'package:todolist_firebase/TasksPage.dart';
 import 'package:todolist_firebase/category.dart';
 
 class CategoryPage extends StatelessWidget {
-
   String? username;
-   CategoryPage({super.key,required this.username });
+  CategoryPage({super.key, required this.username});
   final TextEditingController _textFieldController = TextEditingController();
 
   @override
@@ -23,23 +22,25 @@ class CategoryPage extends StatelessWidget {
         children: [
           Container(
             margin: const EdgeInsets.only(left: 30, bottom: 10, top: 80),
-            child:  Text(
+            child: Text(
               'Hello',
-              style: GoogleFonts.asapCondensed(fontSize: 40,fontWeight: FontWeight.w400),
+              style: GoogleFonts.asapCondensed(
+                  fontSize: 40, fontWeight: FontWeight.w400),
             ),
           ),
           Container(
             margin: const EdgeInsets.only(left: 30, bottom: 50),
-            child:  Text(
+            child: Text(
               "$username",
-              style: GoogleFonts.asapCondensed(fontSize: 40,fontWeight: FontWeight.w400),
+              style: GoogleFonts.asapCondensed(
+                  fontSize: 40, fontWeight: FontWeight.w400),
             ),
           ),
           Expanded(
             child: Container(
               padding: const EdgeInsets.only(
-                top: 40,
-              ),
+                  // top: 40,
+                  ),
               decoration: const BoxDecoration(
                   color: Color.fromRGBO(13, 12, 56, 1),
                   borderRadius: BorderRadius.only(
@@ -62,7 +63,8 @@ class CategoryPage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final category = categories[index];
                       return Container(
-                        height: 80,
+                      
+                        height: 60,
                         margin: const EdgeInsets.all(20),
                         decoration: const BoxDecoration(
                             color: Colors.white,
@@ -70,16 +72,19 @@ class CategoryPage extends StatelessWidget {
                                 BorderRadius.all(Radius.circular(20))),
                         child: ListTile(
                           title: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(category.name,
-                                      style:  GoogleFonts.jost(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.w400)),
+                                      style: GoogleFonts.jost(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: const Color.fromRGBO(
+                                            179, 183, 238, 1),
+                                      )),
                                   Row(
                                     children: [
                                       IconButton(
@@ -88,11 +93,15 @@ class CategoryPage extends StatelessWidget {
                                               context: context,
                                               builder: (context) {
                                                 return AlertDialog(
-                                                  title:  Text(
-                                                      'Edit Category',
-                                                      style: GoogleFonts.averageSans(
-                                                        fontSize: 17,fontWeight: FontWeight.w400
-                                                      ),),
+                                                  title: Text(
+                                                    'Edit Category',
+                                                    style:
+                                                        GoogleFonts.averageSans(
+                                                            fontSize: 17,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w400),
+                                                  ),
                                                   content: TextField(
                                                     controller:
                                                         _textFieldController,
@@ -195,64 +204,80 @@ class CategoryPage extends StatelessWidget {
     final TextEditingController _controller = TextEditingController();
 
     showModalBottomSheet(
+      
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40), topRight: Radius.circular(40))),
       context: context,
       builder: (context) {
-        return Container(
-          height: 250,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                  margin: const EdgeInsets.only(top: 60, left: 40, bottom: 10),
-                  child:  Text('Enter Category',
-                  style: GoogleFonts.averageSans(
-                    fontSize: 17,fontWeight: FontWeight.w400
-                  ),)),
-              Container(
-                margin: const EdgeInsets.only(left: 40),
-                width: MediaQuery.of(context).size.width - 100,
-                child: TextField(
-                  controller: _controller,
-                  decoration: const InputDecoration(
-                      filled: true,
-                      fillColor: Color.fromRGBO(208, 205, 236, 1),
-                      border: OutlineInputBorder()),
-                ),
-              ),
-              const SizedBox(height: 16.0),
-              Container(
-                height: 40,
-                width: 90,
-                margin: EdgeInsets.only(
-                    top: 20, left: MediaQuery.of(context).size.width / 2.8),
-                child: ElevatedButton(
-                    style: ButtonStyle(
-                        fixedSize:
-                            MaterialStateProperty.all(const Size(70, 40)),
-                        backgroundColor: MaterialStateProperty.all(
-                          const Color.fromRGBO(208, 205, 236, 1),
-                        )),
-                    onPressed: () async {
-                      String categoryName = _controller.text.trim();
-                      if (categoryName.isNotEmpty) {
-                        await categoriesRef.add({
-                          'name': categoryName,
-                          'timestamp': FieldValue
-                              .serverTimestamp(), // Add the timestamp field
-                        });
-
-                        Navigator.pop(context);
-                      }
-                    },
-                    child:  Text(
-                      'Add',
-                      style: GoogleFonts.averageSans(fontSize: 17, fontWeight: FontWeight.w400,color: Colors.black),
+        return SingleChildScrollView(
+          child: Container(
+            // margin: EdgeInsets.only(bottom: 40),
+            padding: EdgeInsets.only(
+              top: 40,
+              bottom: MediaQuery.of(context).viewInsets.bottom),
+            // height: 450,
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                    margin: const EdgeInsets.only(top: 0, left: 55, bottom: 10),
+                    child: Text(
+                      'Enter Category',
+                      style: GoogleFonts.averageSans(
+                          fontSize: 17, fontWeight: FontWeight.w400),
                     )),
-              )
-            ],
+                Container(
+                  margin: const EdgeInsets.only(left: 55),
+                  width: MediaQuery.of(context).size.width - 100,
+                  child: TextField(
+                    controller: _controller,
+                    decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: Color.fromRGBO(208, 205, 236, 1),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.zero,
+                            borderSide: BorderSide.none)),
+                  ),
+                ),
+                const SizedBox(height: 16.0),
+                Container(
+                  height: 40,
+                  width: 90,
+                  margin: EdgeInsets.only(
+                      top: 20, left: MediaQuery.of(context).size.width / 2.8),
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                          fixedSize:
+                              MaterialStateProperty.all(const Size(70, 40)),
+                          backgroundColor: MaterialStateProperty.all(
+                            const Color.fromRGBO(208, 205, 236, 1),
+                          )),
+                      onPressed: () async {
+                        String categoryName = _controller.text.trim();
+                        if (categoryName.isNotEmpty) {
+                          await categoriesRef.add({
+                            'name': categoryName,
+                            'timestamp': FieldValue
+                                .serverTimestamp(), // Add the timestamp field
+                          });
+          
+                          Navigator.pop(context);
+                        }
+                      },
+                      child: Text(
+                        'Add',
+                        style: GoogleFonts.averageSans(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black),
+                      )),
+                    
+                ),
+                SizedBox(height: 20,)
+              ],
+            ),
           ),
         );
       },

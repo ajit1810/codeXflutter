@@ -27,18 +27,18 @@ class WelcomePage extends StatelessWidget {
            child:   Text('Build the future by completing tasks.',
           style: GoogleFonts.asapCondensed(
             color:const Color.fromRGBO(255, 255, 255, 1),
-            fontSize: 21,fontWeight: FontWeight.w700
+            fontSize: 20,fontWeight: FontWeight.w700
           ),),
           ) ,
           Container(
             height: 84,
             width: 278,
-            margin: const EdgeInsets.only(top: 30,bottom: 80,left: 50,right: 50),
+            margin: const EdgeInsets.only(top: 30,bottom: 60,left: 50,right: 50),
           child:   Text("Your tasks are bridges leading to the future. By completing them, reach your potential and your dreams.",
           textAlign: TextAlign.center,
           style: GoogleFonts.asapCondensed(
             color:const Color.fromRGBO(255, 255, 255, 1),
-            fontSize: 17,fontWeight: FontWeight.w700 
+            fontSize: 16,fontWeight: FontWeight.w700 
           ),),
           ),
           ElevatedButton(

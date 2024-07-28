@@ -1,32 +1,13 @@
 {
   "project_info": {
-    "project_number": "1007233150184",
-    "project_id": "fir-todo-1250f",
-    "storage_bucket": "fir-todo-1250f.appspot.com"
+    "project_number": "786414552620",
+    "project_id": "todo-list-firebase-b81e3",
+    "storage_bucket": "todo-list-firebase-b81e3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1007233150184:android:61dee7e9afeb3a76b56d5d",
-        "android_client_info": {
-          "package_name": "com.example.firebase_todolist"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBdPNW0QGmwpPcI46IDOZZK8b5QcZ8gV1Y"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1007233150184:android:eb845d0be6f986fdb56d5d",
+        "mobilesdk_app_id": "1:786414552620:android:5e3ef0f8ff1deec325f389",
         "android_client_info": {
           "package_name": "com.example.todolist_firebase"
         }
@@ -34,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBdPNW0QGmwpPcI46IDOZZK8b5QcZ8gV1Y"
+          "current_key": "AIzaSyDAumx-SVaM2GVauEILXhqdHzCy0I2Lx30"
         }
       ],
       "services": {
