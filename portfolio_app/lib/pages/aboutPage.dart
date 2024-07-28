@@ -14,13 +14,14 @@ class AboutPage extends StatelessWidget {
          leading: IconButton(
           onPressed: (){
             Navigator.push(context,MaterialPageRoute(builder: (context) => RoutePage(),));
-          }, icon: Icon(Icons.arrow_back)),
+          }, icon: Icon(Icons.arrow_back,color: Colors.white,)),
+          // iconTheme:IconThemeData(color: Colors.white) ,
        backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
-        // centerTitle: true,
+        centerTitle: true,
         automaticallyImplyLeading: false,
         title: const Text(
           'About Me',
-          style: TextStyle(letterSpacing: 2)
+          style: TextStyle(letterSpacing: 2,color: Colors.white)
         ),
       ),
       body: SlidingSheet(

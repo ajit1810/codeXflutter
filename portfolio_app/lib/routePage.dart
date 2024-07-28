@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:portfolio_app/pages/aboutPage.dart';
 import 'package:portfolio_app/pages/contactPage.dart';
@@ -30,14 +31,14 @@ class _RoutePageState extends State<RoutePage> {
         data: NavigationBarThemeData(
           // indicatorColor: Colors.blue.shade100,
           labelTextStyle: MaterialStateProperty.all(
-            TextStyle(
+            const TextStyle(
               fontSize: 15,fontWeight: FontWeight.w500
             )
           )
         ),
         child: Container(
           color: Colors.black,
-          padding: EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 20),
           child: NavigationBar(
         
             height: 40,
@@ -48,14 +49,14 @@ class _RoutePageState extends State<RoutePage> {
                 this.pageIndex=pageIndex;
               });
             },
-            destinations: const [
+            destinations:  const [
         
               NavigationDestination(
                 icon: Icon(Icons.home,color: Colors.white), 
                 label: 'Home'
                 ),
               NavigationDestination(
-                icon: Icon(Icons.production_quantity_limits,color: Colors.white), 
+                icon: Icon(Icons.document_scanner_rounded,color: Colors.white,), 
                 label: 'Projects'
                 ),
               NavigationDestination(

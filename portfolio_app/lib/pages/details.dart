@@ -29,7 +29,8 @@ class _DetailsState extends State<Details> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 37, 37, 37),
-        title: Text(projects['projectName']),
+        title: Text(projects['projectName'],style: TextStyle(color: Colors.white),),
+         automaticallyImplyLeading: true,iconTheme:IconThemeData(color: Colors.white) ,
       ),
       body: SlidingSheet(
         elevation: 0,

@@ -82,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
        style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith<Color>(
           (Set<MaterialState> states) {
-            if (states.contains(MaterialState.hovered)) {
+            if (states.contains(WidgetState.hovered)) {
               return  Colors.orangeAccent;
 
             }
@@ -94,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                    
                     onPressed: (){
                       Get.to(()=>const RoutePage(),
-                      transition: Transition.downToUp,
+                      transition: Transition.zoom,
                       duration: const Duration(seconds: 3),
                       );
                     }, 

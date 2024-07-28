@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               ),
               onTap: () => Get.to(
                 () => const MyProjects(),
-                transition: Transition.downToUp,
+                transition: Transition.rightToLeft,
                 duration: const Duration(seconds: 3),
               ),
               value: 1,
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
               ),
               onTap: () => Get.to(
                 () => const ContactPage(),
-                transition: Transition.downToUp,
+                transition: Transition.rightToLeft,
                 duration: const Duration(seconds: 3),
               ),
               value: 1,
@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
               ),
               onTap: () => Get.to(
                 () => const AboutPage(),
-                transition: Transition.leftToRight,
+                transition: Transition.rightToLeft,
                 duration: const Duration(seconds: 2),
               ),
               value: 1,

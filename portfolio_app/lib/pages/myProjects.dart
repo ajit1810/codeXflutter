@@ -23,19 +23,19 @@ class _MyProjectsState extends State<MyProjects> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: (){
-            Navigator.push(context,MaterialPageRoute(builder: (context) => RoutePage(),));
-          }, icon: Icon(Icons.arrow_back)),
-        // centerTitle: true,
+            Navigator.push(context,MaterialPageRoute(builder: (context) => const RoutePage(),));
+          }, icon: const Icon(Icons.arrow_back,color: Colors.white,)),
+         centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
-        title: const Text("Projects",style: TextStyle(letterSpacing: 2),),
+        title: const Text("Projects",style: TextStyle(letterSpacing: 2,color: Colors.white),),
       ),
       body: ListView.builder(
         itemCount: myProjectsList.length,
         itemBuilder: (context, index) {
           return Container(
             margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
-            height: 220,
+            height: 250,
             width: MediaQuery.of(context).size.width * 0.9,
             child: Card(
               color: const Color(0xff262628),
@@ -69,7 +69,7 @@ class _MyProjectsState extends State<MyProjects> {
                       ),
                     ),
                     const SizedBox(
-                      height: 8,
+                      height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

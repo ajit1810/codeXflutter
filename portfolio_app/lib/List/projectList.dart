@@ -1,7 +1,7 @@
  List<Map<String, dynamic>> myProjectsList = [
     {
       'langName': "Flutter",
-      'projectName': 'Quiz APP ',
+      'projectName': 'Quiz App ',
       'imageUrl': [ 'images/quiz-1.jpg' ,
                     'images/quiz-2.jpg',
                     'images/quiz-3.jpg',

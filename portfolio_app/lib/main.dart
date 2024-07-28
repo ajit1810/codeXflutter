@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_app/loginpage.dart';
-import 'package:portfolio_app/pages/contactPage.dart';
+
 
 
 void main() {
@@ -16,7 +16,6 @@ class MainApp extends StatelessWidget {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
-      
     
     );
     

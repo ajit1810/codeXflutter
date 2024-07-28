@@ -24,10 +24,11 @@ class _ContactPageState extends State<ContactPage> {
       appBar: AppBar(
          leading: IconButton(
           onPressed: (){
-            Navigator.push(context,MaterialPageRoute(builder: (context) => RoutePage(),));
-          }, icon: Icon(Icons.arrow_back)),
+            Navigator.push(context,MaterialPageRoute(builder: (context) => const RoutePage(),));
+          }, icon: const Icon(Icons.arrow_back,color: Colors.white,)),
         backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
-        title: const Text('Contact'),
+        title: const Text('Contact',style: TextStyle(color: Colors.white,letterSpacing: 2),),
+        centerTitle: true,
       ),
       body: Column(
         children: [
