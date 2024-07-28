@@ -21,6 +21,17 @@ class _CodesState extends State<Codes> {
   Widget build(BuildContext context) {
     return Scaffold(
        backgroundColor: Color(0xFF9B89CE),
+        appBar: AppBar(
+        // iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Color(0xFF9B89CE),
+         leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white), // Custom back arrow
+          onPressed: () {
+            Navigator.pop(context); // Navigate back
+          },
+        ),
+        automaticallyImplyLeading: false,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -29,22 +40,11 @@ class _CodesState extends State<Codes> {
               children: [
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.only(left: 50, right: 10, top: 50),
+                    margin: EdgeInsets.only(left: 50, right: 10, top: 0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        IconButton(
-                            onPressed: () {
-                              Navigator.pop(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => TopicUI(),
-                                  ));
-                            },
-                            icon: Icon(
-                              Icons.arrow_back_ios_new_sharp,
-                              color: Colors.white,
-                            )),
+                       
                         Text(
                           'Java',
                           style: GoogleFonts.jost(
@@ -62,7 +62,7 @@ class _CodesState extends State<Codes> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 70, left: 30,right: 30),
+                  margin: EdgeInsets.only(top: 0, left: 30,right: 30),
                   height: 120,
                   width: 120,
                   decoration: BoxDecoration(
@@ -118,7 +118,7 @@ class _CodesState extends State<Codes> {
                           child: Text(
                             "What is Java",
                             style: GoogleFonts.anekTamil(
-                                fontSize: 16, fontWeight: FontWeight.bold),
+                                fontSize: 13, fontWeight: FontWeight.bold),
                           ))
                     ],
                   ),
@@ -127,8 +127,8 @@ class _CodesState extends State<Codes> {
                     height: 45,
                     width: 300,
                     child: Text(
-                      'lorem ipsum lorem ipsum lorem ipsum lorem ipsum  ',
-                      style: GoogleFonts.anekTamil(fontSize: 18),
+                      'Java is a popular programming language, created in 1995. It is owned by Oracle, and more than 3 billion devices run Java.  ',
+                      style: GoogleFonts.anekTamil(fontSize: 10),
                     ),
                   ),
                   Row(
@@ -145,17 +145,17 @@ class _CodesState extends State<Codes> {
                           child: Text(
                             'Java is Platform Independent',
                             style: GoogleFonts.anekTamil(
-                                fontSize: 16, fontWeight: FontWeight.bold),
+                                fontSize: 13, fontWeight: FontWeight.bold),
                           ))
                     ],
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 35, top: 0),
-                    height: 45,
+                    height: 105,
                     width: 300,
                     child: Text(
-                      'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
-                      style: GoogleFonts.anekTamil(fontSize: 18),
+                      'Java is platform-independent because it is compiled to a bytecode that can be run on any device that has a Java Virtual Machine (JVM). This means that you can write a Java program on one platform (such as Windows) and then run it on a different platform (such as macOS or Linux) without making any changes to the code.',
+                      style: GoogleFonts.anekTamil(fontSize: 10),
                     ),
                   ),
                   Expanded(

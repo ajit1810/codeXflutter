@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
           style:  GoogleFonts.quicksand(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Color.fromRGBO(0, 0, 0, 1))
+            color: const Color.fromRGBO(0, 0, 0, 1))
           ),
         ),
       ],
@@ -195,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: [
                        Container(
-                        margin: EdgeInsets.only(left: 20,top: 10),
+                        margin: const EdgeInsets.only(left: 20,top: 10),
                          child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -203,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                           style: GoogleFonts.anekTamil(
                             fontSize: 15,color: Colors.white),),
                            Container(
-                            margin: EdgeInsets.only(top: 8),
+                            margin: const EdgeInsets.only(top: 8),
                              child:  Text('10 am - 12 am',
                               style: GoogleFonts.anekTamil(
                                  fontSize: 12,color: Colors.white)
@@ -213,14 +213,15 @@ class _HomePageState extends State<HomePage> {
                          ),
                        ),
                         Container(
-                          margin: EdgeInsets.only(left: 90,top: 10),
+                          margin: const EdgeInsets.only(left: 90,top: 10),
                           child: ElevatedButton(
                             style: ButtonStyle(
-                              fixedSize: MaterialStateProperty.all(Size(80, 12)),
-                              shape: MaterialStateProperty.all(StadiumBorder())
+                              fixedSize: MaterialStateProperty.all(const Size(120, 12)),
+                              shape: MaterialStateProperty.all(const StadiumBorder()),
+                              backgroundColor: const WidgetStatePropertyAll(Colors.blue)
                             ),
                             onPressed: (){}, child: Text('Join Demo',
-                            style: GoogleFonts.anekTamil(fontSize: 9),)),
+                            style: GoogleFonts.poppins(fontSize: 12,color: Colors.white),)),
                         ),
                       ],
                     ),
@@ -228,7 +229,7 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: Container(
                        
-                        margin: EdgeInsets.symmetric(horizontal: 60,vertical: 25),
+                        margin: const EdgeInsets.symmetric(horizontal: 60,vertical: 25),
                         child: Text('Flutter App Developmet',
                         style: GoogleFonts.anekTamil(
                           fontSize: 20,

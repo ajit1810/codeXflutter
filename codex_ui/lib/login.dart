@@ -134,7 +134,7 @@ final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
                       }
                   }, 
                   child:  Text('Login',
-                  style: GoogleFonts.anekTamil(fontSize: 18),),
+                  style: GoogleFonts.poppins(fontSize: 18,color: Colors.white),),
                   ),
               ),
               SizedBox(height: 50,),
