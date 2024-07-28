@@ -1,23 +1,23 @@
 List<Map> Questions = [
     {
-      "question": "Founder of BJP ?",
-      "options": ["Advani", "Modi", "Amit shah","Fadnavis"],
+      "question": "Who developed Java?",
+      "options": ["Gennady Korotkevich", "John Carmack", "Oracle Corporation ","James Gosling"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Who designed Java?",
+      "options": ["James Gosling", "Linus Torvalds", "Alan Turing", "Oracle Corporation"],
       "correctAnswer": 0
     },
     {
-      "question": "Founder of Congress  ?",
-      "options": ["Mohandas Gandhi", "Indira Gandhi", "Nehru", "Rahul Gandhi"],
-      "correctAnswer": 0
-    },
-    {
-      "question": "Founder of Shivsena ?",
-      "options": ["Shinde", "Balsaheb Thakre", "Udhhav Thakre","Raj Thakre"],
+      "question": "Which is the latest version of Java?",
+      "options": ["Java 8", "Java 22", "Java 11","Java 17"],
       "correctAnswer": 1
     },
     {
-      "question" : "Who has the most 100s in cricket history ?",
-      "options": ["Virat Kholi", "Sachin Tendulkar", "Ricky Pointing","Kumar Sangakkara"],
-      "correctAnswer": 1
+      "question" : "Which statement is true for Java?",
+      "options": ["It is a code dependent programming language ", "It is a platform dependent programming language ", "It is a platform independent programming language ","It is a code dependent programming language "],
+      "correctAnswer": 2
 
     },
      {

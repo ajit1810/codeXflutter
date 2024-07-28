@@ -9,6 +9,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+
+
+
   int questionIndex = 0;
   int selectedAnsIndex = -1;
   int totalScore = 0;
@@ -20,25 +24,26 @@ class _MyHomePageState extends State<MyHomePage> {
           if (enable==true) {
             totalScore++;
           }
-          return MaterialStatePropertyAll(Colors.green);
+          return const MaterialStatePropertyAll(Colors.green);
         } else {
-          return MaterialStatePropertyAll(Colors.red);
+          return const MaterialStatePropertyAll(Colors.red);
         }
       } else {
         if (buttonIndex == Questions[questionIndex]["correctAnswer"]) {
-          return MaterialStatePropertyAll(Colors.green);
+          return const MaterialStatePropertyAll(Colors.green);
         }
       }
     } else {
-      return MaterialStatePropertyAll(Colors.blue);
+      return const MaterialStatePropertyAll(Colors.blue);
     }
-    return MaterialStatePropertyAll(Colors.blue);
+    return const MaterialStatePropertyAll(Colors.blue);
   }
 
   Widget scorePage(){
       return Scaffold(
+        
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage("images/bg-end.png"),
               opacity: 70,
@@ -48,28 +53,28 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
-                Text(
+                const Text(
                   "Result",
                   style: TextStyle(fontSize: 25),
                   ),
-                  SizedBox(
+                  const SizedBox(
                   height: 50,
                 ),
                 Text(
                   "Marks $totalScore/${Questions.length}",
-                  style: TextStyle(fontSize: 22),
+                  style: const TextStyle(fontSize: 22),
                   ),
-                  SizedBox(
+                  const SizedBox(
                   height: 50,
                 ),
                 Text(
                   totalScore >= 3 ? "You are passed" : "You are failed",
-                  style: TextStyle(fontSize: 22),
+                  style: const TextStyle(fontSize: 22),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 SizedBox(
@@ -80,8 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     totalScore = 0;
                    });
                   },
-                   child: Text("Try again"),
-                   style: ButtonStyle(
+                   child: const Text("Try again"),
+                   style: const ButtonStyle(
                     fixedSize: MaterialStatePropertyAll(
                       Size(200, 40)
                     )
@@ -101,7 +106,8 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        backgroundColor: Colors.blue,
+        title: const Text(
           "Quiz App",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -111,22 +117,22 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Questions : ",
+                const Text("Questions : ",
                 style: TextStyle(fontSize: 25),
                 ),
                 Text(
                   "${questionIndex +1}/${Questions.length}",
-                  style: TextStyle(fontSize: 25),
+                  style: const TextStyle(fontSize: 25),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Container(
@@ -134,16 +140,17 @@ class _MyHomePageState extends State<MyHomePage> {
               width: double.infinity,
               color: Colors.black,
             ),
-               SizedBox(
+               const SizedBox(
               height: 25,
             ),
             Container(
+              margin: EdgeInsets.all(20),
               child: Text(
                 "Q.${questionIndex + 1 } : ${Questions[questionIndex]["question"]}",
-                style: TextStyle(fontSize: 25),
+                style: const TextStyle(fontSize: 25),
               ),
             ),
-             SizedBox(
+             const SizedBox(
               height: 25,
             ),
             ElevatedButton(
@@ -155,15 +162,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         enable = !enable;
                       });
                     },
-            child: Text("A.${Questions[questionIndex]["options"][0]}"),
+            child: Text("A.${Questions[questionIndex]["options"][0]}",style: TextStyle(color: Colors.white),),
             style: ButtonStyle(
               backgroundColor:checkAns(0),
-                fixedSize: MaterialStatePropertyAll(
-                  Size(300,30),
+                fixedSize: const MaterialStatePropertyAll(
+                  Size(300,50),
                 )
               ) ,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ElevatedButton(
@@ -175,15 +182,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         enable = !enable;
                       });
                     },
-            child: Text("B.${Questions[questionIndex]["options"][1]}"),
+            child: Text("B.${Questions[questionIndex]["options"][1]}",style: TextStyle(color: Colors.white)),
             style: ButtonStyle(
               backgroundColor:checkAns(1),
-                fixedSize: MaterialStatePropertyAll(
-                  Size(300,30),
+                fixedSize: const MaterialStatePropertyAll(
+                  Size(300,50),
                 )
               ) ,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ElevatedButton(
@@ -195,15 +202,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         enable = !enable;
                       });
                     },
-            child: Text("C.${Questions[questionIndex]["options"][2]}"),
+            child: Text("C.${Questions[questionIndex]["options"][2]}",style: TextStyle(color: Colors.white)),
             style: ButtonStyle(
               backgroundColor:checkAns(2),
-                fixedSize: MaterialStatePropertyAll(
-                  Size(300,30),
+                fixedSize: const MaterialStatePropertyAll(
+                  Size(300,50),
                 )
               ) ,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ElevatedButton(
@@ -215,15 +222,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         enable = !enable;
                       });
                     },
-            child: Text("D.${Questions[questionIndex]["options"][3]}"),
+            child: Container(child: Text("D.${Questions[questionIndex]["options"][3]}",style: TextStyle(color: Colors.white))),
             style: ButtonStyle(
               backgroundColor:checkAns(3),
-                fixedSize: MaterialStatePropertyAll(
-                  Size(300,30),
+                fixedSize: const MaterialStatePropertyAll(
+                  Size(300,50),
                 )
               ) ,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
           ],
