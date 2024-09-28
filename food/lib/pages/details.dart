@@ -6,8 +6,8 @@ import 'package:food/widget/widget_support.dart';
 // ignore: must_be_immutable
 class Details extends StatefulWidget {
 
-  String image , name , detail , price;
-   Details({super.key , required this.image,required this.name,required this.detail ,required this.price});
+  String image , name , detail ,shortdetails, price;
+   Details({super.key , required this.image,required this.name,required this.detail ,required this.shortdetails,required this.price});
 
   @override
   State<Details> createState() => _DetailsState();
@@ -45,15 +45,19 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         leading: InkWell(
           onTap: () {
             Navigator.pop(context);
           },
           child: Container(
             margin: EdgeInsets.only(left: 20,),
-            child: Icon(Icons.arrow_back_ios)),
+            child: Icon(Icons.arrow_back_ios,color: Colors.white,)),
         ),
+        title: Text('Details',style: AppWidget.HeadlineTextFieldStyle(),),
+        centerTitle: true,
       ),
       body: Container(
         margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
@@ -84,7 +88,9 @@ class _DetailsState extends State<Details> {
                     // ),
                     Text(
                       widget.name,
-                      style: AppWidget.boldTextFieldStyle(),
+                      style:TextStyle(
+                          color:Colors.white,fontSize: 20,fontWeight: FontWeight.bold
+                      ),
                     ),
                   ],
                 ),
@@ -100,8 +106,8 @@ class _DetailsState extends State<Details> {
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.black),
-                    child: const Icon(Icons.remove, color: Colors.white),
+                        color: Colors.white),
+                    child: const Icon(Icons.remove, color: Colors.black),
                   ),
                 ),
                 const SizedBox(
@@ -109,7 +115,9 @@ class _DetailsState extends State<Details> {
                 ),
                 Text(
                   a.toString(),
-                  style: AppWidget.SemiBoldTextFieldStyle(),
+                  style:TextStyle(
+                     color:Colors.white,fontSize: 17,fontWeight: FontWeight.bold
+                  )
                 ),
                 const SizedBox(
                   width: 10,
@@ -124,8 +132,8 @@ class _DetailsState extends State<Details> {
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.black),
-                    child: const Icon(Icons.add, color: Colors.white),
+                        color: Colors.white),
+                    child: const Icon(Icons.add, color: Colors.black),
                   ),
                 )
               ],
@@ -137,10 +145,14 @@ class _DetailsState extends State<Details> {
             const SizedBox(height: 20,),
             Row(
               children: [
-                Text('Delivery Time',style: AppWidget.SemiBoldTextFieldStyle(),),
+                Text('Delivery Time',style: TextStyle(
+                   color:Colors.white,fontSize: 17,fontWeight: FontWeight.bold
+                ),),
                 const SizedBox(width: 10,),
-                const Icon(Icons.alarm , color: Colors.black54,),
-                Text('30 min',style: AppWidget.SemiBoldTextFieldStyle(),)
+                const Icon(Icons.alarm , color: Colors.white,),
+                Text('30 min',style: TextStyle(
+                   color:Colors.white,fontSize: 17,fontWeight: FontWeight.bold
+                ),)
               ],
             ),
             const Spacer(), 
@@ -152,7 +164,9 @@ class _DetailsState extends State<Details> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Total Price',style: AppWidget.SemiBoldTextFieldStyle(),),
+                      Text('Total Price',style: TextStyle(
+                         color:Colors.white,fontSize: 17,fontWeight: FontWeight.bold
+                      ),),
                       Text('\$${total.toString()}',style: AppWidget.boldTextFieldStyle(),)
                     ],
                   ),
@@ -166,7 +180,7 @@ class _DetailsState extends State<Details> {
                       };
                       await DatabaseMethods().addFoodtoCart(addFoodtoCart, id!);
                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.orange,
               content: Text(
                 'Food Add to Cart',
                 style: TextStyle(fontSize: 18),
@@ -177,24 +191,24 @@ class _DetailsState extends State<Details> {
                       padding: const EdgeInsets.all(8),
                       
                       decoration:  BoxDecoration(
-                        color: Colors.black,
+                        color: Colors.orange,
                         borderRadius: BorderRadius.circular(10)
                       ),
                       child:  Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           const Text('Add To Cart',style: TextStyle(
-                            color: Colors.white,fontSize: 16
+                            color: Colors.black,fontSize: 17,fontWeight: FontWeight.bold
                           ),),
-                          SizedBox(width: 30,),
+                          SizedBox(width: 20,),
                           Container(
                     
                             padding: EdgeInsets.all(3),
                             decoration:  BoxDecoration(
-                              color: Colors.grey,
+                              color: Colors.white,
                               borderRadius: BorderRadius.circular(8)
                             ),
-                            child: const Icon(Icons.shopping_cart_outlined,color: Colors.white,),
+                            child: const Icon(Icons.shopping_cart_outlined,color: Colors.black,),
                           ),
                              SizedBox(width: 10,),
                         ],

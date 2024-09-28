@@ -56,7 +56,7 @@ class _SignUpState extends State<SignUp> {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) =>  BottomNav(username:nameController.text),
+              builder: (context) => BottomNav(),
             ));
       } on FirebaseException catch (e) {
         if (e.code == 'weak-password') {
@@ -82,9 +82,7 @@ class _SignUpState extends State<SignUp> {
               style: TextStyle(fontSize: 20),
             ))));
       }
-      
     }
-     
   }
 
   @override
@@ -100,8 +98,8 @@ class _SignUpState extends State<SignUp> {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                  Color(0xFFff5c30),
-                  Color(0xFFe74b1a),
+                  Color.fromARGB(255, 16, 41, 61),
+                  Color.fromARGB(255, 14, 37, 48),
                 ])),
           ),
           Container(
@@ -149,7 +147,10 @@ class _SignUpState extends State<SignUp> {
                           children: [
                             Text(
                               'Sign up',
-                              style: AppWidget.HeadlineTextFieldStyle(),
+                              style: TextStyle(
+                                 color:Colors.black,fontSize: 26,fontWeight: FontWeight.bold
+                                 
+                              ),
                             ),
                             TextFormField(
                               controller: nameController,
@@ -168,7 +169,6 @@ class _SignUpState extends State<SignUp> {
                             TextFormField(
                               controller: emailController,
                               keyboardType: TextInputType.emailAddress,
-                              
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Please Enter Email';
@@ -215,7 +215,7 @@ class _SignUpState extends State<SignUp> {
                                   ),
                                   width: 200,
                                   decoration: BoxDecoration(
-                                      color: const Color(0xFFff5c30),
+                                      color: const Color.fromARGB(255, 16, 41, 61),
                                       borderRadius: BorderRadius.circular(20)),
                                   child: const Center(
                                     child: Text(

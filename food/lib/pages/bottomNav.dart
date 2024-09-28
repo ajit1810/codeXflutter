@@ -1,25 +1,21 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:food/pages/cart.dart';
 import 'package:food/pages/home.dart';
-import 'package:food/pages/order.dart';
 import 'package:food/pages/profile.dart';
 import 'package:food/pages/wallet.dart';
 
 // ignore: must_be_immutable
 class BottomNav extends StatefulWidget {
-   String? username;
-   BottomNav({super.key,this.username});
- 
+  BottomNav({super.key});
+
   @override
-  State<BottomNav> createState() => _BottomNavState(username);
+  State<BottomNav> createState() => _BottomNavState();
 }
 
 class _BottomNavState extends State<BottomNav> {
+  _BottomNavState();
 
-  String? username;
-  _BottomNavState(this.username);
-
-  
   int currentTabIndex = 0;
 
   late List<Widget> pages;
@@ -27,16 +23,16 @@ class _BottomNavState extends State<BottomNav> {
   late Widget currentPage;
   late Home homePage;
   late Profile profile;
-  late Orders orders;
+  late Cart cart;
   late Wallet wallet;
 
   @override
   void initState() {
-    homePage =  Home(username: username,);
-    orders = const Orders();
+    homePage = Home();
+    cart = Cart();
     profile = const Profile();
-    wallet = const Wallet();
-    pages = [homePage, orders, wallet, profile];
+    wallet = Wallet();
+    pages = [homePage, cart, wallet, profile];
     super.initState();
   }
 
@@ -50,7 +46,7 @@ class _BottomNavState extends State<BottomNav> {
         animationDuration: Duration(milliseconds: 500),
         onTap: (int index) {
           setState(() {
-            currentTabIndex=index;
+            currentTabIndex = index;
           });
         },
         items: const [
@@ -58,17 +54,17 @@ class _BottomNavState extends State<BottomNav> {
             Icons.home_outlined,
             color: Colors.white,
           ),
-           Icon(
+          Icon(
             Icons.shopping_bag_outlined,
-              color: Colors.white,
+            color: Colors.white,
           ),
-           Icon(
+          Icon(
             Icons.wallet_outlined,
-              color: Colors.white,
+            color: Colors.white,
           ),
-           Icon(
+          Icon(
             Icons.person_outline,
-             color: Colors.white,
+            color: Colors.white,
           )
         ],
       ),

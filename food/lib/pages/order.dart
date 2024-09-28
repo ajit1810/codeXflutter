@@ -1,28 +1,21 @@
-import 'dart:async';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:food/services/database.dart';
 import 'package:food/services/shared_pref.dart';
 import 'package:food/widget/widget_support.dart';
 
 class Orders extends StatefulWidget {
-  const Orders({super.key});
+  String? image, quantity, totalspecfic, name;
+  Orders({super.key, this.image, this.name, this.quantity, this.totalspecfic});
 
   @override
-  State<Orders> createState() => _OrdersState();
+  State<Orders> createState() => _OrdersState(totalspecfic);
 }
 
 class _OrdersState extends State<Orders> {
-  String? id, wallet;
-  int total = 0, amount2 = 0;
+  String? totalspecfic;
+  _OrdersState(this.totalspecfic);
 
-  void startTimer() {
-    Timer(const Duration(seconds: 3), () {
-      amount2 = total;
-      setState(() {});
-    });
-  }
+  String? id, wallet;
 
   getthesharedpref() async {
     id = await SharedPreferenceHelper().getUserId();
@@ -39,152 +32,153 @@ class _OrdersState extends State<Orders> {
   @override
   void initState() {
     ontheload();
-    startTimer();
+
     super.initState();
   }
 
   Stream? foodStream;
 
-  Widget foodCart() {
-    return StreamBuilder(
-        stream: foodStream,
-        builder: (context, AsyncSnapshot snapshot) {
-          return snapshot.hasData
-              ? ListView.builder(
-                  padding: EdgeInsets.zero,
-                  itemCount: snapshot.data.docs.length,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (context, index) {
-                    DocumentSnapshot ds = snapshot.data.docs[index];
-                    total = total + int.parse(ds["Total"]);
-                    return Container(
-                      margin: const EdgeInsets.only(
-                          left: 20.0, right: 20.0, bottom: 10.0),
-                      child: Material(
-                        elevation: 5.0,
-                        borderRadius: BorderRadius.circular(10),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10)),
-                          padding: const EdgeInsets.all(10),
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 90,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                    border: Border.all(),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Center(child: Text(ds["Quantity"])),
-                              ),
-                              const SizedBox(
-                                width: 20.0,
-                              ),
-                              ClipRRect(
-                                  borderRadius: BorderRadius.circular(60),
-                                  child: Image.network(
-                                    ds["Image"],
-                                    height: 90,
-                                    width: 90,
-                                    fit: BoxFit.cover,
-                                  )),
-                              const SizedBox(
-                                width: 20.0,
-                              ),
-                              Column(
-                                children: [
-                                  Text(
-                                    ds["Name"],
-                                    style: AppWidget.SemiBoldTextFieldStyle(),
-                                  ),
-                                  Text(
-                                    "\$" + ds["Total"],
-                                    style: AppWidget.SemiBoldTextFieldStyle(),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  })
-              : const CircularProgressIndicator();
-        });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.only(top: 60.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Material(
-                elevation: 2.0,
-                child: Container(
-                    padding: const EdgeInsets.only(bottom: 10.0),
-                    child: Center(
-                        child: Text(
-                      "Food Cart",
-                      style: AppWidget.HeadlineTextFieldStyle(),
-                    )))),
-            const SizedBox(
-              height: 20.0,
-            ),
-            Container(
-                height: MediaQuery.of(context).size.height / 2,
-                child: foodCart()),
-            const Spacer(),
-            const Divider(),
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Total Price",
-                    style: AppWidget.boldTextFieldStyle(),
-                  ),
-                  Text(
-                    "\$" + total.toString(),
-                    style: AppWidget.SemiBoldTextFieldStyle(),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            GestureDetector(
-              onTap: () async {
-                int amount = int.parse(wallet!) - amount2;
-                await DatabaseMethods()
-                    .UpdateUserwallet(id!, amount.toString());
-                await SharedPreferenceHelper()
-                    .saveUserWallet(amount.toString());
-              },
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 10.0),
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(10)),
-                margin: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
-                child: const Center(
-                    child: const Text(
-                  "CheckOut",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold),
-                )),
-              ),
-            )
-          ],
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        centerTitle: true,
+        title: Text(
+          'Orders',
+          style: AppWidget.HeadlineTextFieldStyle(),
         ),
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Container(
+              margin: const EdgeInsets.only(
+                left: 20,
+              ),
+              child: const Icon(Icons.arrow_back_ios,color: Colors.white,)),
+        ),
+      ),
+      body: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.only(top: 20, left: 20, right: 20,bottom: 20),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(500),
+              child: Image.network(
+                widget.image ?? "",
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 2.5,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Divider(),
+          Container(
+            margin:
+                const EdgeInsets.only(top: 10, bottom: 20, left: 20, right: 20),
+            child: Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 0, bottom: 10),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Your Order :',
+                        style: AppWidget.LightTextFieldStyle(),
+                      ),
+                      const SizedBox(
+                        width: 40,
+                      ),
+                      Text(widget.name ?? "",
+                          style: AppWidget.boldTextFieldStyle()),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 10, bottom: 10),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Your Quantity :',
+                        style: AppWidget.LightTextFieldStyle(),
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Text(widget.quantity ?? "",
+                          style: AppWidget.boldTextFieldStyle()),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 10, bottom: 10),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Total :',
+                        style: AppWidget.HeadlineTextFieldStyle(),
+                      ),
+                      const SizedBox(
+                        width: 55,
+                      ),
+                      Text(widget.totalspecfic ?? "",
+                          style: AppWidget.boldTextFieldStyle()),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () async {
+                    int amount = int.parse(wallet!) - int.parse(totalspecfic!);
+
+                                              showDialog(
+                    context: context,
+                    builder: (_) => const AlertDialog(
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.check_circle,
+                                    color: Colors.green,
+                                  ),
+                                  Text("Payment Successfull"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ));
+
+                    await DatabaseMethods()
+                        .UpdateUserwallet(id!, amount.toString());
+                    await SharedPreferenceHelper()
+                        .saveUserWallet(amount.toString());
+
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.only(
+                        top: 50, left: 20.0, right: 20.0, bottom: 20.0),
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: const Center(
+                        child: const Text(
+                      "Buy Now",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

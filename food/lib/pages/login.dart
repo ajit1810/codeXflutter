@@ -65,8 +65,8 @@ class _LoginState extends State<Login> {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                  Color(0xFFff5c30),
-                  Color(0xFFe74b1a),
+                 Color.fromARGB(255, 16, 41, 61),
+                  Color.fromARGB(255, 14, 37, 48),
                 ])),
           ),
           Container(
@@ -116,7 +116,9 @@ class _LoginState extends State<Login> {
                            
                             Text(
                               'Login',
-                              style: AppWidget.HeadlineTextFieldStyle(),
+                              style: TextStyle(
+                                 color:Colors.black,fontSize: 26,fontWeight: FontWeight.bold
+                              ),
                             ),
                             
                             TextFormField(
@@ -184,7 +186,7 @@ class _LoginState extends State<Login> {
                                   ),
                                   width: 200,
                                   decoration: BoxDecoration(
-                                      color: const Color(0xFFff5c30),
+                                       color:   Color.fromARGB(255, 16, 41, 61),
                                       borderRadius: BorderRadius.circular(20)),
                                   child: const Center(
                                     child: Text(

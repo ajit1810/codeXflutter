@@ -31,6 +31,7 @@ class _OnBoardState extends State<OnBoard> {
     // debugPrint('currentIndex: ${currentIndex.toString()}');
     // debugPrint('contents: ${contents.length.toString()}');
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
@@ -39,82 +40,92 @@ class _OnBoardState extends State<OnBoard> {
                 itemCount: contents.length,
                 onPageChanged: (int index) {
                   setState(() {
-                  
                     currentIndex = index;
-                     
                   });
                 },
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(top: 40,left: 20,right: 20),
+                    padding:
+                        const EdgeInsets.only(top: 40, left: 20, right: 20),
                     child: Column(
                       children: [
                         Image.asset(
                           contents[index].image,
-                          height:400,
-                          width: MediaQuery.of(context).size.width ,
+                          height: 400,
+                          width: MediaQuery.of(context).size.width,
                           fit: BoxFit.fill,
                         ),
-                        const SizedBox(height: 20,),
-                        Text(contents[index].title,style: AppWidget.HeadlineTextFieldStyle(),
+                        const SizedBox(
+                          height: 20,
                         ),
-                         const SizedBox(height: 20,),
-                         Text(contents[index].description,style: AppWidget.LightTextFieldStyle(),
-                         )
+                        Text(
+                          contents[index].title,
+                          style:TextStyle(
+                             color:Colors.black,fontSize: 26,fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          contents[index].description,
+                          style: AppWidget.LightTextFieldStyle(),
+                        )
                       ],
                     ),
                   );
                 }),
           ),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                   children: 
-                    List.generate(contents.length, (index) =>
-                    
-                      buildDot(index,context),
-                    )  
+          Container(
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  contents.length,
+                  (index) => buildDot(index, context),
+                )),
+          ),
+          GestureDetector(
+            onTap: () {
+              if (currentIndex == contents.length - 1) {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignUp(),
+                    ));
+              }
+              _controller.nextPage(
+                  duration: const Duration(milliseconds: 100),
+                  curve: Curves.bounceIn);
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.red, borderRadius: BorderRadius.circular(20)),
+              height: 60,
+              margin: const EdgeInsets.all(40),
+              width: double.infinity,
+              child: Center(
+                child: Text(
+                  currentIndex == contents.length - 1 ? "Start" : 'Next',
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
-              GestureDetector(
-                onTap: () {
-                  if (currentIndex==contents.length-1) {
-                    
-                    Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => const SignUp(),)
-                      );
-                  }
-                  _controller.nextPage(
-                    duration: const Duration(milliseconds: 100), curve: Curves.bounceIn);
-                },
-                child: Container(
-                  decoration:  BoxDecoration(
-                    color: Colors.red,borderRadius: BorderRadius.circular(20)
-                  ),
-                  height: 60,
-                  margin: const EdgeInsets.all(40),
-                  width: double.infinity,
-                  child: Center(
-                    child:  Text(
-                      currentIndex==contents.length -1?"Start":'Next',style: const TextStyle(
-                      color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold
-                    ),),
-                  ),
-                ),
-              )
+            ),
+          )
         ],
       ),
     );
   }
-  Container buildDot(int index,BuildContext context){
+
+  Container buildDot(int index, BuildContext context) {
     return Container(
       height: 10,
-      width: currentIndex==index?18:7,
+      width: currentIndex == index ? 18 : 7,
       margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.grey
-      ),
+          borderRadius: BorderRadius.circular(10), color: Colors.grey),
     );
   }
 }

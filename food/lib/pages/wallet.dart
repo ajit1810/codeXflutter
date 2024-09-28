@@ -19,13 +19,13 @@ class Wallet extends StatefulWidget {
 }
 
 class _WalletState extends State<Wallet> {
-  String? wallet, id;
+  String? Wallet, id;
   int? add;
 
-  final TextEditingController amountController = new TextEditingController();
+  final TextEditingController amountController =  TextEditingController();
 
   getthesharedpref() async {
-    wallet = await SharedPreferenceHelper().getUserWallet();
+    Wallet = await SharedPreferenceHelper().getUserWallet();
     id = await SharedPreferenceHelper().getUserId();
     setState(() {});
   }
@@ -46,39 +46,49 @@ class _WalletState extends State<Wallet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: wallet == null
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+       
+        elevation: 2,
+        title:  Text(
+                          "Wallet",
+                          style: AppWidget.HeadlineTextFieldStyle(),
+                        ),
+      ),
+      body: Wallet == null
           ? const CircularProgressIndicator()
           : Container(
               width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.only(top: 60),
+              margin: const EdgeInsets.only(top: 30),
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
+                
                 children: [
-                  Material(
-                    elevation: 2.0,
-                    child: Container(
-
-                        // height: 40,
-                        // width: double.infinity,
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Text(
-                          "Wallet",
-                          style: AppWidget.HeadlineTextFieldStyle(),
-                        )),
-                  ),
+                
                   Container(
                     margin: const EdgeInsets.only(top: 30, bottom: 20),
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 10),
                     width: MediaQuery.of(context).size.width,
-                    decoration: const BoxDecoration(color: Color(0xFFF2F2F2)),
+                    decoration: const BoxDecoration(color:Color(0404246),),
                     child: Row(
                       children: [
-                        Image.asset(
-                          'images/wallet.png',
-                          height: 60,
-                          width: 60,
-                          fit: BoxFit.cover,
+                        Container(
+                          height: 60,width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: const DecorationImage(
+                              image: AssetImage(
+                            'images/wallet.png',
+                           
+                          
+                          ),
+                           fit: BoxFit.cover,
+                          )
+                          ),
+                        
                         ),
                         const SizedBox(
                           width: 40,
@@ -86,15 +96,17 @@ class _WalletState extends State<Wallet> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'Your Wallet',
-                              style: AppWidget.LightTextFieldStyle(),
+                              style:TextStyle(
+                                color:Colors.grey,fontSize: 18,fontWeight: FontWeight.w800
+                              ),
                             ),
                             const SizedBox(
                               height: 5,
                             ),
                             Text(
-                              '\$' + wallet!,
+                              '\$' + Wallet!,
                               style: AppWidget.boldTextFieldStyle(),
                             )
                           ],
@@ -102,13 +114,15 @@ class _WalletState extends State<Wallet> {
                       ],
                     ),
                   ),
-                  Row(
+                  const Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 20),
+                        padding: EdgeInsets.only(left: 20),
                         child: Text(
                           "Add Money",
-                          style: AppWidget.SemiBoldTextFieldStyle(),
+                          style: TextStyle(
+                             color:Colors.white,fontSize: 17,fontWeight: FontWeight.bold
+                          ),
                         ),
                       ),
                     ],
@@ -131,7 +145,9 @@ class _WalletState extends State<Wallet> {
                               borderRadius: BorderRadius.circular(5)),
                           child: Text(
                             '\$100',
-                            style: AppWidget.SemiBoldTextFieldStyle(),
+                            style:TextStyle(
+                             color:Colors.white,fontSize: 17,fontWeight: FontWeight.bold
+                          ),
                           ),
                         ),
                       ),
@@ -147,7 +163,9 @@ class _WalletState extends State<Wallet> {
                               borderRadius: BorderRadius.circular(5)),
                           child: Text(
                             '\$500',
-                            style: AppWidget.SemiBoldTextFieldStyle(),
+                            style: TextStyle(
+                             color:Colors.white,fontSize: 17,fontWeight: FontWeight.bold
+                          ),
                           ),
                         ),
                       ),
@@ -163,7 +181,9 @@ class _WalletState extends State<Wallet> {
                               borderRadius: BorderRadius.circular(5)),
                           child: Text(
                             '\$1000',
-                            style: AppWidget.SemiBoldTextFieldStyle(),
+                            style: TextStyle(
+                             color:Colors.white,fontSize: 17,fontWeight: FontWeight.bold
+                          ),
                           ),
                         ),
                       ),
@@ -179,7 +199,9 @@ class _WalletState extends State<Wallet> {
                               borderRadius: BorderRadius.circular(5)),
                           child: Text(
                             '\$2000',
-                            style: AppWidget.SemiBoldTextFieldStyle(),
+                            style: TextStyle(
+                             color:Colors.white,fontSize: 17,fontWeight: FontWeight.bold
+                          ),
                           ),
                         ),
                       )
@@ -215,7 +237,7 @@ class _WalletState extends State<Wallet> {
     );
   }
 
-  Future<void> makePayment(String amount) async {
+  Future<void>makePayment(String amount) async {
     try {
       paymentIntent = await createPaymentIntent(amount, 'INR');
       await Stripe.instance
@@ -234,7 +256,7 @@ class _WalletState extends State<Wallet> {
   displayPaymentSheet(String amount) async {
     try {
       await Stripe.instance.presentPaymentSheet().then((value) async {
-        add = int.parse(wallet!) + int.parse(amount);
+        add = int.parse(Wallet!) + int.parse(amount);
         await SharedPreferenceHelper().saveUserWallet(add.toString());
         await DatabaseMethods().UpdateUserwallet(id!, add.toString());
         showDialog(
@@ -270,7 +292,7 @@ class _WalletState extends State<Wallet> {
                 content: Text("Cancelled "),
               ));
     } catch (e) {
-      print('$e');
+      debugPrint('$e');
     }
   }
 
@@ -371,7 +393,7 @@ class _WalletState extends State<Wallet> {
                           ),
                           child: const Center(
                               child: Text(
-                            "Pay",
+                            "Add Money",
                             style: TextStyle(color: Colors.white),
                           )),
                         ),

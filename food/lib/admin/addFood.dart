@@ -1,3 +1,4 @@
+
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
@@ -18,9 +19,10 @@ class _AddFoodState extends State<AddFood> {
   final List<String> fooditems = ['Ice-cream', 'Burger', 'Salad', 'Pizza'];
   String? value;
 
-  final TextEditingController namecontroller = new TextEditingController();
-  final TextEditingController pricecontroller = new TextEditingController();
-  final TextEditingController detailcontroller = new TextEditingController();
+  final TextEditingController namecontroller =  TextEditingController();
+  final TextEditingController pricecontroller =  TextEditingController();
+  final TextEditingController shortdetailscontroller =  TextEditingController();
+  final TextEditingController detailcontroller =  TextEditingController();
 
 
      final ImagePicker _picker = ImagePicker();
@@ -38,6 +40,7 @@ class _AddFoodState extends State<AddFood> {
     if (selectedImage != null &&
         namecontroller.text != "" &&
         pricecontroller.text != "" &&
+        shortdetailscontroller.text != "" &&
         detailcontroller.text != "") {
       String addId = randomAlphaNumeric(10);
 
@@ -52,6 +55,7 @@ class _AddFoodState extends State<AddFood> {
         "Image": downloadUrl,
         "Name": namecontroller.text,
         "Price": pricecontroller.text,
+        "ShortDetails": shortdetailscontroller.text,
         "Detail": detailcontroller.text
       };
       await DatabaseMethods().addFoodItem(addItem, value!).then((value) {
@@ -193,6 +197,30 @@ class _AddFoodState extends State<AddFood> {
                 height: 30.0,
               ),
               Text(
+                "Item Short-Details",
+                style: AppWidget.SemiBoldTextFieldStyle(),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    color: const Color(0xFFececf8),
+                    borderRadius: BorderRadius.circular(10)),
+                child: TextField(
+                  controller: shortdetailscontroller,
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: "Enter Item Short-Detail",
+                      hintStyle: AppWidget.LightTextFieldStyle()),
+                ),
+              ),
+              const SizedBox(
+                height: 30.0,
+              ),
+              Text(
                 "Item Detail",
                 style: AppWidget.SemiBoldTextFieldStyle(),
               ),
@@ -272,7 +300,7 @@ class _AddFoodState extends State<AddFood> {
                               child: const Center(
                                 child: Text(
                                   "Add",
-                                  style: const TextStyle(
+                                  style:  TextStyle(
                                       color: Colors.white,
                                       fontSize: 22.0,
                                       fontWeight: FontWeight.bold),
