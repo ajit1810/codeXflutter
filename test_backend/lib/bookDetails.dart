@@ -22,6 +22,21 @@ class BookDetailPage extends StatelessWidget {
             Text(
               'Description: \n(Here you can add a description or any other details about the book)',
               style: TextStyle(fontSize: 16),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              // 
             ),
           ],
         ),
